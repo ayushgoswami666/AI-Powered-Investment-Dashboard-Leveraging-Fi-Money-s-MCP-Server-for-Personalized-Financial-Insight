@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import React from "react";
+import { SignInButton, SignUpButton, UserButton, useAuth, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 const Header = () => {
   return (
@@ -15,13 +16,24 @@ const Header = () => {
       </div>
 
       {/* Right side - Buttons */}
-      <div className="space-x-4">
-        <button className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-slate-900 transition">
-          Login
-        </button>
-        <button className="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600 transition">
-          Sign Up
-        </button>
+      <div className="space-x-4 flex items-center">
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-slate-900 transition">
+              Login
+            </button>
+          </SignInButton>
+          <SignUpButton mode="modal">
+            <button className="px-4 py-2 bg-amber-500 rounded-lg hover:bg-amber-600 text-white transition">
+              Sign Up
+            </button>
+          </SignUpButton>
+        </SignedOut>
+
+        <SignedIn>
+          {/* UserButton shows avatar + menu (sign out) */}
+          <UserButton />
+        </SignedIn>
       </div>
     </header>
   );

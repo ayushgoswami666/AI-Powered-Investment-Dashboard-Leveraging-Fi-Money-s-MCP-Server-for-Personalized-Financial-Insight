@@ -70,7 +70,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-6 text-center text-sm">
-          <p className="mb-2">© 2025 FinEdge Inc. All rights reserved.</p>
+          <p className="mb-2">© 2025 DhanSetu Inc. All rights reserved.</p>
           <p className="text-amber-400 font-medium">
             Made with ❤️ by <span className="font-semibold">Team Winters</span>
           </p>
